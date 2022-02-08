@@ -1,0 +1,168 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #333333;
+  color: lightgrey;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .loading {
+  margin-top: 100px;
+  width: 200px;
+  aspect-ratio: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+main .loading img {
+  -webkit-transform: perspective(500px) rotateY(0deg);
+          transform: perspective(500px) rotateY(0deg);
+  height: 100px;
+  -webkit-animation: loadingAnim 2000ms linear infinite;
+          animation: loadingAnim 2000ms linear infinite;
+}
+
+main .loading img.shaddow {
+  -webkit-transform: perspective(500px) rotateZ(90deg) rotateY(90deg);
+          transform: perspective(500px) rotateZ(90deg) rotateY(90deg);
+  position: absolute;
+  bottom: 10px;
+  -webkit-filter: grayscale(1) blur(6px) brightness(15%);
+          filter: grayscale(1) blur(6px) brightness(15%);
+  -webkit-animation-name: loadingAnimShaddow;
+          animation-name: loadingAnimShaddow;
+}
+
+main .loading span:after {
+  content: "";
+  position: absolute;
+  -webkit-animation: loadingAnimText 2000ms infinite;
+          animation: loadingAnimText 2000ms infinite;
+}
+
+@-webkit-keyframes loadingAnim {
+  0% {
+    -webkit-transform: perspective(500px) rotateY(0deg);
+            transform: perspective(500px) rotateY(0deg);
+  }
+  100% {
+    -webkit-transform: perspective(500px) rotateY(360deg);
+            transform: perspective(500px) rotateY(360deg);
+  }
+}
+
+@keyframes loadingAnim {
+  0% {
+    -webkit-transform: perspective(500px) rotateY(0deg);
+            transform: perspective(500px) rotateY(0deg);
+  }
+  100% {
+    -webkit-transform: perspective(500px) rotateY(360deg);
+            transform: perspective(500px) rotateY(360deg);
+  }
+}
+
+@-webkit-keyframes loadingAnimShaddow {
+  0% {
+    -webkit-transform: perspective(500px) translateZ(-100px) rotateX(-100deg) scaleX(1) rotateZ(180deg);
+            transform: perspective(500px) translateZ(-100px) rotateX(-100deg) scaleX(1) rotateZ(180deg);
+  }
+  25% {
+    -webkit-transform: perspective(500px) translateZ(-100px) rotateX(-100deg) scaleX(0) rotateZ(180deg);
+            transform: perspective(500px) translateZ(-100px) rotateX(-100deg) scaleX(0) rotateZ(180deg);
+  }
+  50% {
+    -webkit-transform: perspective(500px) translateZ(-100px) rotateX(-100deg) scaleX(1) rotateZ(180deg);
+            transform: perspective(500px) translateZ(-100px) rotateX(-100deg) scaleX(1) rotateZ(180deg);
+  }
+  75% {
+    -webkit-transform: perspective(500px) translateZ(-100px) rotateX(-100deg) scaleX(0) rotateZ(180deg);
+            transform: perspective(500px) translateZ(-100px) rotateX(-100deg) scaleX(0) rotateZ(180deg);
+  }
+  100% {
+    -webkit-transform: perspective(500px) translateZ(-100px) rotateX(-100deg) scaleX(1) rotateZ(180deg);
+            transform: perspective(500px) translateZ(-100px) rotateX(-100deg) scaleX(1) rotateZ(180deg);
+  }
+}
+
+@keyframes loadingAnimShaddow {
+  0% {
+    -webkit-transform: perspective(500px) translateZ(-100px) rotateX(-100deg) scaleX(1) rotateZ(180deg);
+            transform: perspective(500px) translateZ(-100px) rotateX(-100deg) scaleX(1) rotateZ(180deg);
+  }
+  25% {
+    -webkit-transform: perspective(500px) translateZ(-100px) rotateX(-100deg) scaleX(0) rotateZ(180deg);
+            transform: perspective(500px) translateZ(-100px) rotateX(-100deg) scaleX(0) rotateZ(180deg);
+  }
+  50% {
+    -webkit-transform: perspective(500px) translateZ(-100px) rotateX(-100deg) scaleX(1) rotateZ(180deg);
+            transform: perspective(500px) translateZ(-100px) rotateX(-100deg) scaleX(1) rotateZ(180deg);
+  }
+  75% {
+    -webkit-transform: perspective(500px) translateZ(-100px) rotateX(-100deg) scaleX(0) rotateZ(180deg);
+            transform: perspective(500px) translateZ(-100px) rotateX(-100deg) scaleX(0) rotateZ(180deg);
+  }
+  100% {
+    -webkit-transform: perspective(500px) translateZ(-100px) rotateX(-100deg) scaleX(1) rotateZ(180deg);
+            transform: perspective(500px) translateZ(-100px) rotateX(-100deg) scaleX(1) rotateZ(180deg);
+  }
+}
+
+@-webkit-keyframes loadingAnimText {
+  0% {
+    content: "";
+  }
+  25% {
+    content: ".";
+  }
+  50% {
+    content: "..";
+  }
+  75% {
+    content: "...";
+  }
+}
+
+@keyframes loadingAnimText {
+  0% {
+    content: "";
+  }
+  25% {
+    content: ".";
+  }
+  50% {
+    content: "..";
+  }
+  75% {
+    content: "...";
+  }
+}
+/*# sourceMappingURL=style.css.map */

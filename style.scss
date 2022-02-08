@@ -1,0 +1,88 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    
+}
+body{
+    background-color: hsl(0, 0%, 20%);
+    color:lightgrey;
+}
+$perspective: 500px;
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .loading{
+        margin-top: 100px;
+        width:200px;
+        aspect-ratio: 1;
+        //border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        position: relative;
+        img{
+            transform: perspective($perspective) rotateY(0deg);
+            height:100px;
+            animation: loadingAnim 2000ms linear infinite;
+            &.shaddow{
+                transform: perspective($perspective) rotateZ(90deg) rotateY(90deg);
+                position: absolute;
+                bottom:10px;
+                filter: grayscale(1) blur(6px) brightness(15%);
+                animation-name: loadingAnimShaddow;
+            }
+        }
+        
+        span:after{
+            content: "";
+            position: absolute;
+            animation: loadingAnimText 2000ms infinite;
+        }
+    }
+
+}
+@keyframes loadingAnim {
+    0%{
+        transform: perspective($perspective) rotateY(0deg);
+    }
+    
+    100%{
+        transform: perspective($perspective) rotateY(360deg);
+    }
+}
+@keyframes loadingAnimShaddow {
+    0%{
+        transform: perspective($perspective) translateZ(-100px) rotateX(-100deg) scaleX(1) rotateZ(180deg);
+    }
+    
+    25%{
+        transform: perspective($perspective) translateZ(-100px) rotateX(-100deg) scaleX(0) rotateZ(180deg);
+    }
+    50%{
+        transform: perspective($perspective) translateZ(-100px) rotateX(-100deg) scaleX(1) rotateZ(180deg);
+    }
+    75%{
+        transform: perspective($perspective) translateZ(-100px) rotateX(-100deg) scaleX(0) rotateZ(180deg);
+    }
+    100%{
+        transform: perspective($perspective) translateZ(-100px) rotateX(-100deg) scaleX(1) rotateZ(180deg);
+    }
+}
+@keyframes loadingAnimText {
+    0%{
+        content: "";
+    }
+    25%{
+        content: ".";
+    }
+    50%{
+        content: "..";
+    }
+    75%{
+        content: "...";
+    }
+    
+}
